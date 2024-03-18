@@ -10,6 +10,7 @@ import (
 type Config struct {
 	Email    string `json:"email"`
 	Password string `json:"password"`
+	authToken string  `json:"authToken"`
 }
 func loadConfig(filename string) (Config, error) {
 	var config Config
@@ -20,7 +21,9 @@ func loadConfig(filename string) (Config, error) {
 	err = json.Unmarshal(data, &config)
 	return config, err
 }
-var authToken = "token_de_autenticacao_secreto"
+
+var authToken = ""
+
 func sendEmail(emissor, assunto, destinatario, mensagem, usuario string, config Config) {
 	auth := smtp.PlainAuth("", config.Email, config.Password, "smtp.gmail.com")
 	msg := []byte("Subject: " + assunto + "\r\n" +
