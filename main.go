@@ -25,7 +25,7 @@ func loadConfig(filename string) (Config, error) {
 
 var authToken = "token_de_autenticacao_secreto"
 
-func sendEmailTito(emissor, assunto, destinatario, mensagem, usuario string, config Config) {
+func sendEmail(emissor, assunto, destinatario, mensagem, usuario string, config Config) {
 	// Configuração do servidor SMTP
 	auth := smtp.PlainAuth("", config.Email, config.Password, "smtp.gmail.com")
 
@@ -79,7 +79,7 @@ func sendEmailHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	sendEmailTito(data["emissor"], data["assunto"], data["destinatario"], data["mensagem"], data["usuario"], config)
+	sendEmail(data["emissor"], data["assunto"], data["destinatario"], data["mensagem"], data["usuario"], config)
 
 	w.WriteHeader(http.StatusOK)
 }
