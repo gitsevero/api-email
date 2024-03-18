@@ -3,7 +3,7 @@ services:
   minha-aplicacao:
     build: .
     ports:
-      - "32781:8080"
+      - "32781:32781"
     networks:
       api-email:
         ipv4_address: 172.22.0.100 

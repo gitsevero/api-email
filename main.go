@@ -70,5 +70,5 @@ func sendEmailHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	fmt.Println("API rodando...")
 	http.HandleFunc("/send-email", sendEmailHandler)
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":32781", nil)
 }
