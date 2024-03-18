@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  minha-aplicacao:
+    build: .
+    ports:
+      - "0:8080"  
+    networks:
+      - api-email
+
+networks:
+  api-email:
+    driver: bridge
