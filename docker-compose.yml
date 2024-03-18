@@ -3,9 +3,14 @@ services:
   minha-aplicacao:
     build: .
     ports:
-      - "0:8080"  
+      - "0:8080"
     networks:
-      - api-email
+      api-email:
+        ipv4_address: 172.22.0.10
 networks:
   api-email:
     driver: bridge
+    ipam:
+      config:
+        - subnet: 172.22.0.0/24
+          gateway: 172.22.0.1
