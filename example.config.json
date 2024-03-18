@@ -1,6 +1,6 @@
 {
     "email": "example  email",
-    "password": "senha",
-    "authToken":"token_de_autenticacao_secreto"
+    "password": "senha"
+
   }
   
