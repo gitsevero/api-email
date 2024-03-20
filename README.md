@@ -1,3 +1,4 @@
+
 # API de Envio de E-mails
 
 Este é um servidor de API simples para enviar e-mails usando SMTP. Aqui está uma breve visão geral dos arquivos e funcionalidades relevantes:
@@ -17,6 +18,59 @@ Antes de implantar a API, você precisa configurar o arquivo `config.json` com a
   "password": "sua_senha_de_email"
 }
 ```
+
+## Implantação com Docker
+
+Certifique-se de ter o Docker instalado em sua máquina antes de prosseguir.
+
+1. Clone este repositório.
+2. Configure o arquivo `config.json` conforme mencionado anteriormente.
+3. Abra um terminal na raiz do projeto.
+4. Execute o comando `docker-compose up -d` para iniciar o contêiner em segundo plano.
+
+## Verificando a Porta 32781
+
+Se desejar acessar a API de fora da sua máquina local, verifique se a porta 32781 está aberta e acessível para o mundo externo. Você pode fazer isso usando um serviço online ou um utilitário local como o `nmap`.
+
+Por exemplo, no terminal, você pode executar o comando:
+
+```bash
+nmap -p 32781 localhost
+```
+
+Isso verificará se a porta 32781 está aberta em `localhost`. Certifique-se de substituir `localhost` pelo endereço IP da máquina onde a API está sendo executada, se aplicável.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Consumindo a API de Envio de E-mails
 
 Este guia fornece instruções sobre como consumir a API de Envio de E-mails usando PHP e Python.
